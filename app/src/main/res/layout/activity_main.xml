@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
+    tools:context=".MainActivity">
+
+    <org.firezenk.bubbleemitter.BubbleEmitterView
+        android:id="@+id/bubbleEmitter"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    </org.firezenk.bubbleemitter.BubbleEmitterView>
+
+    <ImageView
+        android:id="@+id/brandingLogo"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/app_logo"/>
+
+    <TextView
+        android:id="@+id/prompt1"
+        android:layout_below="@+id/brandingLogo"
+        android:layout_centerHorizontal="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Choose image"
+        android:textColor="@color/colorAccent"
+        android:textStyle="bold"
+        android:textSize="22sp"/>
+
+    <LinearLayout
+        android:layout_margin="25dp"
+        android:layout_below="@+id/prompt1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="2">
+
+        <ImageButton
+            android:id="@+id/cameraButton"
+            android:backgroundTint="@color/colorPrimary"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:src="@drawable/camera"/>
+
+        <TextView
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="@color/branding_grey"/>
+
+        <ImageButton
+            android:id="@+id/galleryButton"
+            android:backgroundTint="@color/colorPrimary"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:src="@drawable/gallery"/>
+    </LinearLayout>
+</RelativeLayout>

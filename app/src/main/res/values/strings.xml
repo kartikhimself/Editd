@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Editd</string>
+    <string name="file_provider_authorities">com.yalantis.ucrop.provider</string>
+
+    <string name="label_brush">Brush</string>
+    <string name="label_emoji">Emoji</string>
+    <string name="label_sticker">Sticker</string>
+    <string name="label_eraser">Eraser</string>
+    <string name="label_text">Text</string>
+    <string name="label_filter">Filter</string>
+    <string name="label_adjust">Adjust</string>
+</resources>

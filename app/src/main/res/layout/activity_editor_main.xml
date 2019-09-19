@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
+    tools:context=".EditorMainActivity">
+
+    <ja.burhanrashid52.photoeditor.PhotoEditorView
+        android:id="@+id/photoEditorView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/buttonLayout"/>
+
+    <LinearLayout
+        android:id="@+id/buttonLayout"
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="2">
+
+        <com.github.nikartm.button.FitButton
+            android:id="@+id/saveButton"
+            android:layout_margin="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:gravity="center_vertical"
+            android:layout_weight="1"
+            app:fb_cornerRadius="7dp"
+            app:fb_shape="rectangle"
+            app:fb_text="Save"
+            app:fb_textPaddingStart="12dp"
+            app:fb_iconPosition="left"
+            app:fb_textColor="#111"
+            app:fb_icon="@drawable/ic_save_black_24dp"
+            app:fb_iconMarginStart="12dp"
+            app:fb_iconWidth="24dp"
+            app:fb_iconHeight="24dp"
+            app:fb_borderWidth="2dp"
+            app:fb_borderColor="#111"/>
+
+        <com.github.nikartm.button.FitButton
+            android:id="@+id/advanceEditButton"
+            android:layout_margin="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:gravity="center_vertical"
+            android:layout_weight="1"
+            app:fb_cornerRadius="7dp"
+            app:fb_shape="rectangle"
+            app:fb_text="Advance Edit"
+            app:fb_textPaddingStart="12dp"
+            app:fb_iconPosition="left"
+            app:fb_textColor="#111"
+            app:fb_icon="@drawable/ic_compare_black_24dp"
+            app:fb_iconMarginStart="12dp"
+            app:fb_iconWidth="24dp"
+            app:fb_iconHeight="24dp"
+            app:fb_borderWidth="2dp"
+            app:fb_borderColor="#111"/>
+
+    </LinearLayout>
+
+    <ImageButton
+        android:id="@+id/shareButton"
+        android:layout_margin="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:src="@android:drawable/ic_menu_share"
+        android:backgroundTint="@color/colorPrimary"
+        android:tint="@color/colorAccent"/>
+
+</RelativeLayout>
