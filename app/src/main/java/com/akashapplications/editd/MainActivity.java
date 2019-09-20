@@ -48,7 +48,7 @@ public class MainActivity extends AppCompatActivity implements UCropFragmentCall
 
         bubbleEmitterView = findViewById(R.id.bubbleEmitter);
         emitBubbles();
-        getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
+        // getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
 
 
         findViewById(R.id.cameraButton).setOnClickListener(new View.OnClickListener() {
@@ -86,6 +86,30 @@ public class MainActivity extends AppCompatActivity implements UCropFragmentCall
                         .subscribe(permissionResult -> {
                                     if (permissionResult.isGranted()) {
                                         getImageFromGallery();
+                                    } else {
+                                        Toast.makeText(getBaseContext(),
+                                                "Permission Denied\n" + permissionResult.getDeniedPermissions().toString(), Toast.LENGTH_SHORT)
+                                                .show();
+                                    }
+                                }, throwable -> {
+                                }
+                        );
+            }
+        });
+
+        findViewById(R.id.movieButton).setOnClickListener(new View.OnClickListener() {
+            @SuppressLint("CheckResult")
+            @Override
+            public void onClick(View view) {
+                TedRx2Permission.with(MainActivity.this)
+                        .setRationaleTitle("Can we read your storage?")
+                        .setRationaleMessage("We need your permission to access your storage and pick image")
+                        .setPermissions(Manifest.permission.READ_EXTERNAL_STORAGE, Manifest.permission.WRITE_EXTERNAL_STORAGE)
+                        .request()
+                        .subscribe(permissionResult -> {
+                                    if (permissionResult.isGranted()) {
+                                        startActivity(new Intent(getBaseContext(),MovieMaker.class));
+
                                     } else {
                                         Toast.makeText(getBaseContext(),
                                                 "Permission Denied\n" + permissionResult.getDeniedPermissions().toString(), Toast.LENGTH_SHORT)
@@ -151,10 +175,10 @@ public class MainActivity extends AppCompatActivity implements UCropFragmentCall
                 .setCameraOnly(false)               //  Camera mode
                 .setMultipleMode(false)              //  Select multiple images or single image
                 .setFolderMode(true)                //  Folder mode
-                .setShowCamera(true)                //  Show camera button
+                .setShowCamera(false)                //  Show camera button
                 .setFolderTitle("Select Image")           //  Folder title (works with FolderMode = true)
                 .setImageTitle("Select Image")         //  Image title (works with FolderMode = false)
-                .setDoneTitle("START")               //  Done button title
+                .setDoneTitle("EDIT")               //  Done button title
                 .setLimitMessage("You have reached selection limit")    // Selection limit message
                 .setMaxSize(10)                     //  Max images can be selected
                 .setSavePath("Editd")         //  Image capture folder name

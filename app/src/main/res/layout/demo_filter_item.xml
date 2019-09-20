@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="70dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+    android:layout_height="80dp"
+    tools:background="#FF0000">
+    <RelativeLayout
+        android:gravity="center_horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/filter_img"
+        android:layout_width="42dp"
+        android:layout_height="42dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="6dp" />
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/filter_check"
+        android:layout_width="42dp"
+        android:layout_height="42dp"
+        android:layout_centerHorizontal="true"
+        android:visibility="gone"
+        android:src="@drawable/ic_filter_check_shape"
+        android:layout_marginTop="6dp" />
+    <TextView
+        android:layout_below="@+id/filter_img"
+        android:id="@+id/filter_txt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:textSize="12sp"
+        android:gravity="center"
+        android:layout_centerHorizontal="true"
+        android:textColor="@color/white"
+        tools:text="name" />
+    </RelativeLayout>
+</FrameLayout>

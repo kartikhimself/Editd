@@ -3,4 +3,10 @@
     <dimen name="editor_size">35dp</dimen>
     <dimen name="normal_margin">8dp</dimen>
     <dimen name="large_margin">16dp</dimen>
+
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="demo_menu_height">130dp</dimen>
+    <dimen name="demo_bottom_height">120dp</dimen>
+    <dimen name="demo_menu_item_space">10dp</dimen>
 </resources>

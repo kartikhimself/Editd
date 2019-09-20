@@ -27,7 +27,22 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.0" >
+
+        <ImageButton
+            android:id="@+id/shareButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"
+            android:layout_margin="20dp"
+            android:layout_marginTop="2dp"
+            android:layout_marginRight="1dp"
+            android:background="@color/black"
+            android:foregroundTint="@color/white"
+            android:src="@android:drawable/ic_menu_share"
+            android:tint="@color/white" />
+    </ja.burhanrashid52.photoeditor.PhotoEditorView>
 
     <ImageView
         android:id="@+id/imgUndo"
@@ -132,5 +147,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/guideline" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

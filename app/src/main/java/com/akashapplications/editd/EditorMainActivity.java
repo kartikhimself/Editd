@@ -35,7 +35,7 @@ public class EditorMainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_editor_main);
 
-        getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
+        // getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
 
         Uri sourceImage = Uri.parse(getIntent().getStringExtra("uri"));
         editorView = findViewById(R.id.photoEditorView);
@@ -52,6 +52,7 @@ public class EditorMainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(getBaseContext(), AdvanceEdit.class).putExtra("uri", sourceImage.toString()));
+                finish();
             }
         });
 
@@ -99,6 +100,10 @@ public class EditorMainActivity extends AppCompatActivity {
                 final File photoFile = new File(destinationFilename);
                 shareIntent.putExtra(Intent.EXTRA_STREAM, FileProvider.getUriForFile(this, getResources().getString(R.string.file_provider_authorities), photoFile));
                 startActivity(Intent.createChooser(shareIntent, "Share image using"));
+            }
+            else
+            {
+                finish();
             }
         } catch (IOException e) {
             e.printStackTrace();

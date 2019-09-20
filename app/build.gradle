@@ -42,4 +42,10 @@ dependencies {
     implementation 'com.github.krokyze:ucropnedit:2.2.4'
     implementation 'ja.burhanrashid52:photoeditor:0.4.0'
     implementation "com.github.nikartm:fit-button:1.2.1"
+    implementation 'com.github.yellowcath:PhotoMovie:1.6.4'
+
+    implementation 'de.hdodenhof:circleimageview:2.1.0'
+    implementation 'me.iwf.photopicker:PhotoPicker:0.9.12@aar'
+    compile 'com.github.bumptech.glide:glide:4.1.1'
+
 }

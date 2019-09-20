@@ -23,6 +23,7 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.constraintlayout.widget.ConstraintSet;
+import androidx.core.content.FileProvider;
 import androidx.core.content.res.ResourcesCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -74,7 +75,7 @@ public class AdvanceEdit extends AppCompatActivity implements OnPhotoEditorListe
         super.onCreate(savedInstanceState);
 //        makeFullScreen();
         setContentView(R.layout.activity_advance_edit);
-        getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
+        // getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
 
         initViews();
 
@@ -113,7 +114,12 @@ public class AdvanceEdit extends AppCompatActivity implements OnPhotoEditorListe
 
         //Set Image Dynamically
         // mPhotoEditorView.getSource().setImageResource(R.drawable.color_palette);
-
+        findViewById(R.id.shareButton).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                saveImage(true);
+            }
+        });
     }
 
 
@@ -200,7 +206,7 @@ public class AdvanceEdit extends AppCompatActivity implements OnPhotoEditorListe
                 break;
 
             case R.id.imgSave:
-                saveImage();
+                saveImage(false);
                 break;
 
             case R.id.imgClose:
@@ -222,7 +228,7 @@ public class AdvanceEdit extends AppCompatActivity implements OnPhotoEditorListe
     }
 
     @SuppressLint("MissingPermission")
-    private void saveImage() {
+    private void saveImage(boolean isSharingReqired) {
 
         File pictureFolder = Environment.getExternalStoragePublicDirectory(
                 Environment.DIRECTORY_PICTURES
@@ -252,9 +258,20 @@ public class AdvanceEdit extends AppCompatActivity implements OnPhotoEditorListe
             mPhotoEditor.saveAsFile(file.getAbsolutePath(), saveSettings, new PhotoEditor.OnSaveListener() {
                 @Override
                 public void onSuccess(@NonNull String imagePath) {
-                    mPhotoEditorView.getSource().setImageURI(Uri.fromFile(new File(imagePath)));
+//                    mPhotoEditorView.getSource().setImageURI(Uri.fromFile(new File(imagePath)));
                     Toast.makeText(getBaseContext(), "Image saved", Toast.LENGTH_SHORT).show();
-                    finish();
+                    if(isSharingReqired)
+                    {
+                        final Intent shareIntent = new Intent(Intent.ACTION_SEND);
+                        shareIntent.setType("image/*");
+                        final File photoFile = new File(imagePath);
+                        shareIntent.putExtra(Intent.EXTRA_STREAM, FileProvider.getUriForFile(AdvanceEdit.this, getResources().getString(R.string.file_provider_authorities), photoFile));
+                        startActivity(Intent.createChooser(shareIntent, "Share image using"));
+                    }
+                    else
+                    {
+                        finish();
+                    }
                 }
 
                 @Override
@@ -337,7 +354,7 @@ public class AdvanceEdit extends AppCompatActivity implements OnPhotoEditorListe
         builder.setPositiveButton("Save", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-                saveImage();
+                saveImage(false);
             }
         });
         builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
@@ -392,9 +409,13 @@ public class AdvanceEdit extends AppCompatActivity implements OnPhotoEditorListe
                 showFilter(true);
                 break;
             case EMOJI:
+                if(mEmojiBSFragment.isAdded())
+                    break;
                 mEmojiBSFragment.show(getSupportFragmentManager(), mEmojiBSFragment.getTag());
                 break;
             case STICKER:
+                if(mStickerBSFragment.isAdded())
+                    break;
                 mStickerBSFragment.show(getSupportFragmentManager(), mStickerBSFragment.getTag());
                 break;
         }

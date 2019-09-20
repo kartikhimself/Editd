@@ -12,7 +12,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".AdvanceEdit"></activity>
+        <activity android:name=".MovieMaker"></activity>
+        <activity android:name=".AdvanceEdit" />
         <activity android:name=".EditorMainActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
@@ -26,6 +27,20 @@
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
 
+        <activity
+            android:name=".activityAnim.AnimActivity"
+            android:label="@string/app_name"
+            android:hardwareAccelerated="true">
+        </activity>
+
+        <activity android:name="me.iwf.photopicker.PhotoPickerActivity"
+            android:theme="@style/Theme.AppCompat.NoActionBar"
+            />
+
+        <activity android:name="me.iwf.photopicker.PhotoPagerActivity"
+            android:theme="@style/Theme.AppCompat.NoActionBar"/>
+
+
         <provider
             android:name="androidx.core.content.FileProvider"
             android:authorities="@string/file_provider_authorities"
@@ -38,10 +53,11 @@
                 tools:replace="android:resource" />
         </provider>
     </application>
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.CAMERA" />
+
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <dist:module dist:instant="true" />
 

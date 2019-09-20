@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="@color/tool_bg"
@@ -72,7 +73,8 @@
         android:src="@drawable/ic_eraser"
         app:layout_constraintEnd_toStartOf="@+id/imgSticker"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/imgText" />
+        app:layout_constraintStart_toEndOf="@+id/imgText"
+        tools:ignore="MissingConstraints" />
 
     <ImageView
         android:id="@+id/imgSticker"

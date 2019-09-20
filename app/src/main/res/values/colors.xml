@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="colorPrimary">#ffffff</color>
-    <color name="colorPrimaryDark">#ffffff</color>
+    <color name="colorPrimaryDark">#000</color>
     <color name="colorAccent">#263238</color>
     <color name="branding_grey">#4B4D4F</color>
 
@@ -22,4 +22,6 @@
     <color name="yellow_color_picker">#FBE870</color>
     <color name="yellow_green_color_picker">#C5E17A</color>
     <color name="tool_bg">#151414</color>
+
+    <color name="movie_bottom_bg">#7F000000</color>
 </resources>

@@ -14,7 +14,18 @@
     </org.firezenk.bubbleemitter.BubbleEmitterView>
 
     <ImageView
+        android:id="@+id/brandingLogo1"
+        android:layout_marginTop="50dp"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/app_icon"/>
+
+
+    <ImageView
+        android:layout_below="@id/brandingLogo1"
         android:id="@+id/brandingLogo"
+        android:layout_marginTop="-80dp"
         android:layout_marginLeft="50dp"
         android:layout_marginRight="50dp"
         android:layout_width="wrap_content"
@@ -27,12 +38,13 @@
         android:layout_centerHorizontal="true"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Choose image"
+        android:text="Edit Image"
         android:textColor="@color/colorAccent"
         android:textStyle="bold"
         android:textSize="22sp"/>
 
     <LinearLayout
+        android:id="@+id/linear1"
         android:layout_margin="25dp"
         android:layout_below="@+id/prompt1"
         android:layout_width="match_parent"
@@ -61,4 +73,26 @@
             android:layout_weight="1"
             android:src="@drawable/gallery"/>
     </LinearLayout>
+
+    <TextView
+        android:layout_marginTop="25dp"
+        android:id="@+id/prompt2"
+        android:layout_below="@+id/linear1"
+        android:layout_centerHorizontal="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Create Movie"
+        android:textColor="@color/colorAccent"
+        android:textStyle="bold"
+        android:textSize="22sp"/>
+
+    <ImageButton
+        android:id="@+id/movieButton"
+        android:layout_margin="20dp"
+        android:layout_centerHorizontal="true"
+        android:backgroundTint="@color/colorPrimary"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/prompt2"
+        android:src="@drawable/movie"/>
 </RelativeLayout>

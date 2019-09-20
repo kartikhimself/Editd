@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorPrimary"
+    android:background="@color/black"
     tools:context=".EditorMainActivity">
 
     <ja.burhanrashid52.photoeditor.PhotoEditorView
@@ -23,6 +23,7 @@
 
         <com.github.nikartm.button.FitButton
             android:id="@+id/saveButton"
+            app:fb_backgroundColor="@color/white"
             android:layout_margin="20dp"
             android:layout_width="match_parent"
             android:layout_height="40dp"
@@ -47,6 +48,7 @@
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:gravity="center_vertical"
+            app:fb_backgroundColor="@color/white"
             android:layout_weight="1"
             app:fb_cornerRadius="7dp"
             app:fb_shape="rectangle"
@@ -70,8 +72,8 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_alignParentRight="true"
+        android:background="@color/black"
         android:src="@android:drawable/ic_menu_share"
-        android:backgroundTint="@color/colorPrimary"
-        android:tint="@color/colorAccent"/>
+        android:tint="@color/white"/>
 
 </RelativeLayout>
