@@ -72,7 +72,7 @@ public class MovieBottomView extends ConstraintLayout implements View.OnClickLis
         }
     }
 
-    public static interface MovieBottomCallback{
+    public interface MovieBottomCallback{
         void onNextClick();
         void onMusicClick();
         void onTransferClick();

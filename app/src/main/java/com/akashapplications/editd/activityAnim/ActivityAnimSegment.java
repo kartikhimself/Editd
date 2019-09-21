@@ -35,7 +35,7 @@ public class ActivityAnimSegment extends MovieSegment<Activity> {
 
     @Override
     public void drawFrame(Activity painter, float segmentProgress) {
-        TextView textView = (TextView) painter.findViewById(android.R.id.content).findViewWithTag("text");
+        TextView textView = painter.findViewById(android.R.id.content).findViewWithTag("text");
         textView.setRotation(segmentProgress * 7200);
 
         int maxX = (int) (mViewportRect.width() / 2);

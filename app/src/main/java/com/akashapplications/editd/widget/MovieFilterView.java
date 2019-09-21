@@ -140,7 +140,7 @@ public class MovieFilterView extends FrameLayout {
 
     }
 
-    public static interface FilterCallback {
+    public interface FilterCallback {
         void onFilterSelect(FilterItem item);
     }
 }

@@ -13,7 +13,7 @@ import java.util.List;
  * Created by huangwei on 2018/9/9.
  */
 public interface IDemoView {
-    public GLTextureView getGLView();
+    GLTextureView getGLView();
     void setFilters(List<FilterItem> filters);
     Activity getActivity();
 

@@ -202,6 +202,9 @@ public class MainActivity extends AppCompatActivity implements UCropFragmentCall
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        Log.e(Constants.DEBUG_KEY,"requestCode "+requestCode);
+        Log.e(Constants.DEBUG_KEY,"resultCode "+resultCode);
+        Log.e(Constants.DEBUG_KEY,"data " + data);
         if (requestCode == Config.RC_PICK_IMAGES && resultCode == RESULT_OK && data != null) {
             galleryImageList = data.getParcelableArrayListExtra(Config.EXTRA_IMAGES);
             Image choosenImage = galleryImageList.get(0);
@@ -211,7 +214,8 @@ public class MainActivity extends AppCompatActivity implements UCropFragmentCall
                 basicImageEdit(imageUri);
             else
                 Toast.makeText(getBaseContext(), "Could not retrieve image", Toast.LENGTH_SHORT).show();
-        } else if (requestCode == 888 && resultCode == RESULT_OK && data != null) {
+        } else if (requestCode == 888 && resultCode == RESULT_OK) {
+
             basicImageEdit(Uri.fromFile(new File(imageFilePath)));
         } else if (resultCode == RESULT_OK && requestCode == UCrop.REQUEST_CROP) {
             handleCropResult(data);

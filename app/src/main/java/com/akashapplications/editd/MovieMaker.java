@@ -214,7 +214,7 @@ public class MovieMaker extends AppCompatActivity implements IDemoView, MovieBot
     }
 
     private boolean checkInArea(View view, MotionEvent event) {
-        int loc[] = new int[2];
+        int[] loc = new int[2];
         view.getLocationInWindow(loc);
         return event.getRawY() > loc[1];
     }

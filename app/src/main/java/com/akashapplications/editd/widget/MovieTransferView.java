@@ -139,7 +139,7 @@ public class MovieTransferView extends FrameLayout {
 
     }
 
-    public static interface TransferCallback {
+    public interface TransferCallback {
         void onTransferSelect(TransferItem item);
     }
 }

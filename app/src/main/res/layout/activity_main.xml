@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorPrimary"
+    android:background="@drawable/bg"
     tools:context=".MainActivity">
 
     <org.firezenk.bubbleemitter.BubbleEmitterView
@@ -19,7 +19,7 @@
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_centerHorizontal="true"
-        android:src="@drawable/app_icon"/>
+        android:src="@drawable/app_logo_trans"/>
 
 
     <ImageView
@@ -54,7 +54,7 @@
 
         <ImageButton
             android:id="@+id/cameraButton"
-            android:backgroundTint="@color/colorPrimary"
+            android:backgroundTint="@android:color/transparent"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -67,8 +67,7 @@
 
         <ImageButton
             android:id="@+id/galleryButton"
-            android:backgroundTint="@color/colorPrimary"
-            android:layout_width="match_parent"
+            android:backgroundTint="@android:color/transparent"            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:src="@drawable/gallery"/>
@@ -90,8 +89,7 @@
         android:id="@+id/movieButton"
         android:layout_margin="20dp"
         android:layout_centerHorizontal="true"
-        android:backgroundTint="@color/colorPrimary"
-        android:layout_width="wrap_content"
+        android:backgroundTint="@android:color/transparent"        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/prompt2"
         android:src="@drawable/movie"/>
